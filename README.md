@@ -66,3 +66,8 @@ This project is based on the following resources:
 ## License
 
 This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details
+
+# 
+Before running the scripts, ensure you have Docker installed on your machine. You can download Docker from [here](https://www.docker.com/products/docker-desktop).
+
+## Building the Docker Image
