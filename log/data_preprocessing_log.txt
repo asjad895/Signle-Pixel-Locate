@@ -58,3 +58,16 @@
 2024-02-05 23:06:49,242 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
 2024-02-05 23:06:53,745 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
 
+2024-02-05 23:15:49,197 - INFO - Test Loss on unseen data: 21177.72265625
+2024-02-05 23:15:49,209 - ERROR - Error during showing test results: [WinError 3] The system cannot find the path specified: '/Data/Face_data/test'
+2024-02-05 23:16:06,463 - ERROR - Error during saving DataFrame to CSV: [WinError 3] The system cannot find the path specified: '/Data/Face_data/test'
+2024-02-05 23:16:06,991 - INFO - Data unzipped successfully.
+2024-02-05 23:16:15,349 - ERROR - Error during image annotation: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\color.cpp:196: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+2024-02-05 23:16:18,554 - INFO - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0, y 0
+2024-02-05 23:16:42,241 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+2024-02-05 23:16:42,295 - INFO - Model built successfully.
+2024-02-05 23:16:42,680 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
