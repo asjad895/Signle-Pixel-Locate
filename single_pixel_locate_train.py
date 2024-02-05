@@ -286,136 +286,138 @@ lr_scheduler = callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patie
 # early stopping
 early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
-# Training the model with early stopping and learning rate scheduler
-history = model.fit(x=train_images,y=train_coor,batch_size=32,steps_per_epoch=len(train_images) // 32,
-                    epochs=1,validation_split=0.2,callbacks=[lr_scheduler, early_stopping])
 
-# history.__dict__
+# # commenting
+# # Training the model with early stopping and learning rate scheduler
+# history = model.fit(x=train_images,y=train_coor,batch_size=32,steps_per_epoch=len(train_images) // 32,
+#                     epochs=1,validation_split=0.2,callbacks=[lr_scheduler, early_stopping])
 
-# Save the model
-model.save("Face_single_pixel.h5", save_format="tf")
-# load
-loaded_model = tf.keras.models.load_model("Face_single_pixel.h5")
+# # history.__dict__
 
-fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+# # Save the model
+# model.save("Face_single_pixel.h5", save_format="tf")
+# # load
+# loaded_model = tf.keras.models.load_model("Face_single_pixel.h5")
 
-# Loss comparison plot
-axes[0].plot(history.history['loss'], label='Training Loss')
-axes[0].plot(history.history['val_loss'], label='Validation Loss')
-axes[0].set_xlabel('Epoch')
-axes[0].set_ylabel('Loss')
-axes[0].set_title('Loss Curve - Training vs. Validation')
-axes[0].grid(True)
-axes[0].legend()
+# fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 
-# Epoch vs LR plot
-axes[1].plot(history.history['lr'], label='Learning Rate')
-axes[1].set_xlabel('Epoch')
-axes[1].set_ylabel('Learning Rate')
-axes[1].set_title('Learning Rate over Epochs')
-axes[1].grid(True)
-axes[1].legend()
-plt.tight_layout()
-plt.savefig('training_analysis.png')
-plt.show()
+# # Loss comparison plot
+# axes[0].plot(history.history['loss'], label='Training Loss')
+# axes[0].plot(history.history['val_loss'], label='Validation Loss')
+# axes[0].set_xlabel('Epoch')
+# axes[0].set_ylabel('Loss')
+# axes[0].set_title('Loss Curve - Training vs. Validation')
+# axes[0].grid(True)
+# axes[0].legend()
 
-"""**Gradient visualzation**"""
+# # Epoch vs LR plot
+# axes[1].plot(history.history['lr'], label='Learning Rate')
+# axes[1].set_xlabel('Epoch')
+# axes[1].set_ylabel('Learning Rate')
+# axes[1].set_title('Learning Rate over Epochs')
+# axes[1].grid(True)
+# axes[1].legend()
+# plt.tight_layout()
+# plt.savefig('training_analysis.png')
+# plt.show()
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%capture
-# !pip install landscapeviz
+# """**Gradient visualzation**"""
 
-# import landscapeviz
-# # build mesh and plot
-# landscapeviz.build_mesh(model, (train_Images, train_coor), grid_length=40, verbose=0)
-# landscapeviz.plot_contour(key="mean_squared_error")
-# landscapeviz.plot_3d(key="mean_squared_error")
-# Save the logs to a file
-logging.shutdown()
-# Set up logging
-log_file_path = "log/test_model_log.txt"
-logging.basicConfig(filename=log_file_path, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+# # Commented out IPython magic to ensure Python compatibility.
+# # %%capture
+# # !pip install landscapeviz
 
-# Function to evaluate the loaded model
-def evaluate_loaded_model(loaded_model, test_images, test_coor):
-    """Evaluates the loaded model on test data."""
-    try:
-        test_loss = loaded_model.evaluate(test_images, test_coor)
-        logging.info(f"Test Loss on unseen data: {test_loss}")
-    except Exception as e:
-        logging.error(f"Error during model evaluation: {str(e)}")
+# # import landscapeviz
+# # # build mesh and plot
+# # landscapeviz.build_mesh(model, (train_Images, train_coor), grid_length=40, verbose=0)
+# # landscapeviz.plot_contour(key="mean_squared_error")
+# # landscapeviz.plot_3d(key="mean_squared_error")
+# # Save the logs to a file
+# logging.shutdown()
+# # Set up logging
+# log_file_path = "log/test_model_log.txt"
+# logging.basicConfig(filename=log_file_path, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-# Function to show test results with annotated points
-def show_test_result(loaded_model, folder_path, num_images=5, target_size=(256, 256)):
-    """Shows test results with annotated points on images."""
-    try:
-        # Get a list of all image files in the folder
-        all_images = [f for f in os.listdir(folder_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
-        # Randomly select num_images from the list
-        selected_images = random.sample(all_images, min(num_images, len(all_images)))
-        # Display and process each selected image
-        fig, axes = plt.subplots(1, len(selected_images), figsize=(20, 5))
-        for i, img_name in enumerate(selected_images):
-            img_path = os.path.join(folder_path, img_name)
-            img = cv2.imread(img_path,)
-            img = cv2.resize(img, (256, 256))
-            height, width, _ = img.shape
-            img = np.array(img) / 255.0
-            points = loaded_model.predict(img.reshape(-1, 256, 256, 3))
-            img = img * 255
-            img = img.astype(np.uint8)
-            for point in points:
-                x, y = point
-                cv2.circle(img, (int(x), int(y)), 5, (10, 33, 255), -1)
-            cv2.circle(img, (130, 160), 3, (100, 200, 100), -1)
-            axes[i].imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-            axes[i].set_title(f"red-Pred\nGreen-Actual")
-            axes[i].axis('off')
-        plt.savefig('Result_test_data.png')
-        plt.show()
-        logging.info("Test results displayed successfully.")
-    except Exception as e:
-        logging.error(f"Error during showing test results: {str(e)}")
+# # Function to evaluate the loaded model
+# def evaluate_loaded_model(loaded_model, test_images, test_coor):
+#     """Evaluates the loaded model on test data."""
+#     try:
+#         test_loss = loaded_model.evaluate(test_images, test_coor)
+#         logging.info(f"Test Loss on unseen data: {test_loss}")
+#     except Exception as e:
+#         logging.error(f"Error during model evaluation: {str(e)}")
 
-# Function to save DataFrame to CSV
-def save_df_to_csv(img_array, pred_coor_array, actual_coor_array, filename):
-    """Saves a DataFrame with columns for image paths, predicted coordinates, and actual coordinates to a CSV file."""
-    try:
-        data = {
-            'img': img_array,
-            'pred_coor': pred_coor_array,
-            'actual_coor': actual_coor_array
-        }
-        df = pd.DataFrame(data)
-        df.to_csv(filename, index=False)
-        logging.info(f"CSV file '{filename}' saved successfully.")
-    except Exception as e:
-        logging.error(f"Error during saving DataFrame to CSV: {str(e)}")
+# # Function to show test results with annotated points
+# def show_test_result(loaded_model, folder_path, num_images=5, target_size=(256, 256)):
+#     """Shows test results with annotated points on images."""
+#     try:
+#         # Get a list of all image files in the folder
+#         all_images = [f for f in os.listdir(folder_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
+#         # Randomly select num_images from the list
+#         selected_images = random.sample(all_images, min(num_images, len(all_images)))
+#         # Display and process each selected image
+#         fig, axes = plt.subplots(1, len(selected_images), figsize=(20, 5))
+#         for i, img_name in enumerate(selected_images):
+#             img_path = os.path.join(folder_path, img_name)
+#             img = cv2.imread(img_path,)
+#             img = cv2.resize(img, (256, 256))
+#             height, width, _ = img.shape
+#             img = np.array(img) / 255.0
+#             points = loaded_model.predict(img.reshape(-1, 256, 256, 3))
+#             img = img * 255
+#             img = img.astype(np.uint8)
+#             for point in points:
+#                 x, y = point
+#                 cv2.circle(img, (int(x), int(y)), 5, (10, 33, 255), -1)
+#             cv2.circle(img, (130, 160), 3, (100, 200, 100), -1)
+#             axes[i].imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+#             axes[i].set_title(f"red-Pred\nGreen-Actual")
+#             axes[i].axis('off')
+#         plt.savefig('Result_test_data.png')
+#         plt.show()
+#         logging.info("Test results displayed successfully.")
+#     except Exception as e:
+#         logging.error(f"Error during showing test results: {str(e)}")
 
-# Evaluate the loaded model
-try:
-    evaluate_loaded_model(loaded_model, test_images, test_coor)
-except Exception as e:
-    logging.error(f"Error during model evaluation: {str(e)}")
+# # Function to save DataFrame to CSV
+# def save_df_to_csv(img_array, pred_coor_array, actual_coor_array, filename):
+#     """Saves a DataFrame with columns for image paths, predicted coordinates, and actual coordinates to a CSV file."""
+#     try:
+#         data = {
+#             'img': img_array,
+#             'pred_coor': pred_coor_array,
+#             'actual_coor': actual_coor_array
+#         }
+#         df = pd.DataFrame(data)
+#         df.to_csv(filename, index=False)
+#         logging.info(f"CSV file '{filename}' saved successfully.")
+#     except Exception as e:
+#         logging.error(f"Error during saving DataFrame to CSV: {str(e)}")
 
-# Show test results with annotated points
-try:
-    show_test_result(loaded_model, '/Data/Face_data/test')
-except Exception as e:
-    logging.error(f"Error during showing test results: {str(e)}")
+# # Evaluate the loaded model
+# try:
+#     evaluate_loaded_model(loaded_model, test_images, test_coor)
+# except Exception as e:
+#     logging.error(f"Error during model evaluation: {str(e)}")
 
-# Save DataFrame to CSV
-y_pred=loaded_model.predict(test_images)
-try:
-    y_pred = list(zip(y_pred[:, 0], y_pred[:, 1]))
-    y_test = list(zip(test_coor[:, 0], test_coor[:, 1]))
-    l = []
-    for image_file in os.listdir('/Data/Face_data/test'):
-        image_path = os.path.join('/Data/Face_data/test', image_file)
-        l.append(image_path)
-    save_df_to_csv(l, y_test, y_pred, 'test_result.csv')
-except Exception as e:
-    logging.error(f"Error during saving DataFrame to CSV: {str(e)}")
+# # Show test results with annotated points
+# try:
+#     show_test_result(loaded_model, '/Data/Face_data/test')
+# except Exception as e:
+#     logging.error(f"Error during showing test results: {str(e)}")
+
+# # Save DataFrame to CSV
+# y_pred=loaded_model.predict(test_images)
+# try:
+#     y_pred = list(zip(y_pred[:, 0], y_pred[:, 1]))
+#     y_test = list(zip(test_coor[:, 0], test_coor[:, 1]))
+#     l = []
+#     for image_file in os.listdir('/Data/Face_data/test'):
+#         image_path = os.path.join('/Data/Face_data/test', image_file)
+#         l.append(image_path)
+#     save_df_to_csv(l, y_test, y_pred, 'test_result.csv')
+# except Exception as e:
+#     logging.error(f"Error during saving DataFrame to CSV: {str(e)}")
 
 # Save the logs to a file
 logging.shutdown()
