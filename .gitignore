@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 # model
 Trained_model/
+senv/
 # C extensions
 *.so
 
