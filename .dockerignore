@@ -1,0 +1,48 @@
+# Exclude common Python and AI project files and directories
+
+# Python bytecode files
+__pycache__
+
+# Python virtual environment
+venv/
+.env
+.conda/
+# Jupyter Notebooks
+.ipynb_checkpoints/
+Notebook/
+Analysis/
+Test_Data_Result
+# IDE-specific directories
+.vscode/
+.idea/
+
+# Test files and directories
+tests/
+*.pyc
+
+# Data directories
+# Data/
+datasets/
+
+# Model checkpoints and artifacts
+Trained_model/
+models/
+*.h5
+*.hdf5
+*.pth
+*.ckpt
+
+# Log files
+logs/
+log/
+*.log
+
+# Temporary files
+*.swp
+*~
+
+# Docker related files
+.dockerignore
+Dockerfile*
+.docker/
+.docker-compose.yml
