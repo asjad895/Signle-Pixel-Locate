@@ -33,7 +33,7 @@ go to dir ```cd Signle-Pixel-Locate```
 
 ## Data
 
-Data dir readme.md
+Read Data dir readme.md
 
 ## Training
 
