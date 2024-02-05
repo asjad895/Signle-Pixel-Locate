@@ -42,3 +42,19 @@
 2024-02-05 22:51:49,025 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
 2024-02-05 22:51:52,912 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
 
+2024-02-05 23:06:01,040 - INFO - Data unzipped successfully.
+2024-02-05 23:06:14,283 - ERROR - Error during image annotation: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\color.cpp:196: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+2024-02-05 23:06:19,003 - INFO - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0, y 0
+2024-02-05 23:06:24,623 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\backend.py:873: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2024-02-05 23:06:25,609 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\layers\normalization\batch_normalization.py:979: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+2024-02-05 23:06:48,757 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+2024-02-05 23:06:48,968 - INFO - Model built successfully.
+2024-02-05 23:06:49,242 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
+2024-02-05 23:06:53,745 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
