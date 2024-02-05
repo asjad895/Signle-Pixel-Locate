@@ -67,7 +67,19 @@ This project is based on the following resources:
 
 This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details
 
-# 
-Before running the scripts, ensure you have Docker installed on your machine. You can download Docker from [here](https://www.docker.com/products/docker-desktop).
+## Run in Container with Docker
+
+ Before running the scripts, ensure you have Docker installed on your machine. You can download Docker from [here](https://www.docker.com/products/docker-desktop).
 
 ## Building the Docker Image
+
+```docker build -t ml .```
+
+## Running the Docker Image
+
+```docker run ml```
+
+## Run  Scripts
+
+```docker run ml train.py```
+```docker run ml test.py```
