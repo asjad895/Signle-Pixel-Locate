@@ -1,0 +1,44 @@
+2024-02-05 22:48:43,137 - INFO - Data unzipped successfully.
+2024-02-05 22:48:47,939 - ERROR - Error during image annotation: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\color.cpp:196: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+2024-02-05 22:48:49,744 - INFO - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0, y 0
+2024-02-05 22:48:50,371 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\backend.py:873: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2024-02-05 22:48:50,770 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\layers\normalization\batch_normalization.py:979: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+2024-02-05 22:48:56,022 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+2024-02-05 22:48:56,058 - INFO - Model built successfully.
+2024-02-05 22:48:56,186 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
+2024-02-05 22:50:14,544 - INFO - Data unzipped successfully.
+2024-02-05 22:50:19,497 - ERROR - Error during image annotation: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\color.cpp:196: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+2024-02-05 22:50:20,601 - INFO - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0, y 0
+2024-02-05 22:50:21,124 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\backend.py:873: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2024-02-05 22:50:21,459 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\layers\normalization\batch_normalization.py:979: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+2024-02-05 22:50:23,628 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+2024-02-05 22:50:23,660 - INFO - Model built successfully.
+2024-02-05 22:50:23,709 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
+2024-02-05 22:51:38,713 - INFO - Data unzipped successfully.
+2024-02-05 22:51:43,936 - ERROR - Error during image annotation: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\color.cpp:196: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+2024-02-05 22:51:44,958 - INFO - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0, y 0
+2024-02-05 22:51:45,510 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\backend.py:873: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2024-02-05 22:51:45,781 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\layers\normalization\batch_normalization.py:979: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+2024-02-05 22:51:48,913 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+2024-02-05 22:51:48,944 - INFO - Model built successfully.
+2024-02-05 22:51:49,025 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
+2024-02-05 22:51:52,912 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+

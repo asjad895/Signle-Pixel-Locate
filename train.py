@@ -1,18 +1,18 @@
+import os
+import logging
+import wandb
 from tensorflow.keras import models, layers, callbacks
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-#define data or import from other scripts as i did in notebook already i will not do much experiment
 from single_pixel_locate_train import *
+# Set up logging
+log_file_path = "log/training_log.txt"
+logging.basicConfig(filename=log_file_path, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-train_images,train_coor=annotate('/kaggle/working/dataset_lfw_single_coor/train')
-test_images,test_coor=annotate('/kaggle/working/dataset_lfw_single_coor/test')
-val_images,val_coor=annotate('/kaggle/working/dataset_lfw_single_coor/val')
-# learning rate scheduler for dynamic optimization when performance will not improve after 3 epochs
-lr_scheduler = callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, min_lr=1e-6)
-# early stopping
-early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+# Initialize WandB for experiment tracking
+wandb.init(project="pixel_localization_experiment", sync_tensorboard=True)
 
-# Data augmentation if needed but i will not use it now
+# Data augmentation if needed (currently not used)
 datagen = ImageDataGenerator(
     rotation_range=20,
     width_shift_range=0.1,
@@ -24,47 +24,58 @@ datagen = ImageDataGenerator(
 )
 
 # Model
+def create_pixel_localization_model(input_shape=(256, 256, 3)):
+    """Creates a convolutional neural network for regression tasks."""
+    model = models.Sequential()
 
-def Pixel_localization_model(input_shape=(256, 256, 3)):
-   """Creates a convolutional neural network for regression tasks.
-   Args:
-       input_shape (tuple, optional): The shape of the input images.
-           Defaults to (256, 256, 3).
-   Returns:
-       keras.models.Model: The compiled model.
-   """
-   model = models.Sequential()
-   # Convolutional layers for feature extraction
-   model.add(layers.Conv2D(64, (3, 3), activation='relu', input_shape=input_shape))
-   model.add(layers.BatchNormalization())
-   model.add(layers.MaxPooling2D((2, 2)))
-    
-   model.add(layers.Conv2D(128, (3, 3), activation='relu'))
-   model.add(layers.BatchNormalization())
-   model.add(layers.MaxPooling2D((2, 2)))
+    # Convolutional layers for feature extraction
+    model.add(layers.Conv2D(64, (3, 3), activation='relu', input_shape=input_shape))
+    model.add(layers.BatchNormalization())
+    model.add(layers.MaxPooling2D((2, 2)))
 
-   model.add(layers.Conv2D(256, (3, 3), activation='relu'))
-   model.add(layers.BatchNormalization())
-   model.add(layers.MaxPooling2D((2, 2)))
+    model.add(layers.Conv2D(128, (3, 3), activation='relu'))
+    model.add(layers.BatchNormalization())
+    model.add(layers.MaxPooling2D((2, 2)))
+
+    model.add(layers.Conv2D(256, (3, 3), activation='relu'))
+    model.add(layers.BatchNormalization())
+    model.add(layers.MaxPooling2D((2, 2)))
 
     # Flatten layer
-   model.add(layers.Flatten())
+    model.add(layers.Flatten())
 
     # Dense layers for regression output
-   model.add(layers.Dense(512, activation='relu'))
-   model.add(layers.BatchNormalization())
-   model.add(layers.Dropout(0.5))
-   model.add(layers.Dense(256, activation='relu'))
-   model.add(layers.BatchNormalization())
-   model.add(layers.Dropout(0.5))
-   model.add(layers.Dense(2, activation='linear'))
+    model.add(layers.Dense(512, activation='relu'))
+    model.add(layers.BatchNormalization())
+    model.add(layers.Dropout(0.5))
+    model.add(layers.Dense(256, activation='relu'))
+    model.add(layers.BatchNormalization())
+    model.add(layers.Dropout(0.5))
+    model.add(layers.Dense(2, activation='linear'))
 
-   # Compile the model
-   model.compile(optimizer=Adam(lr=1e-4), loss='mean_squared_error')
-   return model
-model=Pixel_localization_model()
+    # Compile the model
+    model.compile(optimizer=Adam(lr=1e-4), loss='mean_squared_error')
+    return model
 
-#Train
-# Training the model with early stopping and learning rate scheduler
-history = model.fit(x=train_images,y=train_coor,batch_size=32,steps_per_epoch=len(train_images) // 32,
-                    epochs=100,validation_data=(val_images, val_coor),callbacks=[lr_scheduler, early_stopping])
+model = create_pixel_localization_model()
+
+# Training
+try:
+    # Training the model with early stopping and learning rate scheduler
+    history = model.fit(x=train_images, y=train_coor, batch_size=32, steps_per_epoch=len(train_images) // 32,
+                        epochs=10, validation_split=0.2, callbacks=[lr_scheduler, early_stopping])
+
+    # Log training information
+    logging.info("Training completed successfully.")
+    wandb.log({"Training Completed": True})
+
+except Exception as e:
+    # Log error information
+    logging.error(f"Error during training: {str(e)}")
+    wandb.log({"Training Error": str(e)})
+
+# Save the trained model
+model.save("Trained_model/pixel_localization_model_1.h5")
+
+# Save the training log to WandB
+wandb.save(log_file_path)
