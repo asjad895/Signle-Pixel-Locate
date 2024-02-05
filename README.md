@@ -39,7 +39,11 @@ Read Data dir readme.md
 
 To train the model, run the following command:
 
-```python train.py```
+- **Notes** -
+- i trained on kaggle due to RAM and GPU .so i have not tested on it my local env
+- for running on local machine adapt code like file path and import helping function etc
+- ```python train.py```
+u can run notebook for experiment how model is trained
 
 ## Testing
 
