@@ -1,5 +1,5 @@
 import tensorflow as tf
-from Notebook import *
+from single_pixel_locate_train import *
 import matplotlib.pyplot as plt
 import opencv as cv2
 import random,os

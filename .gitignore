@@ -5,6 +5,7 @@ __pycache__/
 # model
 Trained_model/
 senv/
+.conda/
 # C extensions
 *.so
 

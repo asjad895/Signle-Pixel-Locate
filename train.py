@@ -2,7 +2,7 @@ from tensorflow.keras import models, layers, callbacks
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 #define data or import from other scripts as i did in notebook already i will not do much experiment
-from Notebook.single-pixel-locate-train. import *
+from single_pixel_locate_train import *
 
 train_images,train_coor=annotate('/kaggle/working/dataset_lfw_single_coor/train')
 test_images,test_coor=annotate('/kaggle/working/dataset_lfw_single_coor/test')
