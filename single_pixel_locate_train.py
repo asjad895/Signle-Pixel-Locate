@@ -347,52 +347,52 @@ early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=5, restore
 #     except Exception as e:
 #         logging.error(f"Error during model evaluation: {str(e)}")
 
-# # Function to show test results with annotated points
-# def show_test_result(loaded_model, folder_path, num_images=5, target_size=(256, 256)):
-#     """Shows test results with annotated points on images."""
-#     try:
-#         # Get a list of all image files in the folder
-#         all_images = [f for f in os.listdir(folder_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
-#         # Randomly select num_images from the list
-#         selected_images = random.sample(all_images, min(num_images, len(all_images)))
-#         # Display and process each selected image
-#         fig, axes = plt.subplots(1, len(selected_images), figsize=(20, 5))
-#         for i, img_name in enumerate(selected_images):
-#             img_path = os.path.join(folder_path, img_name)
-#             img = cv2.imread(img_path,)
-#             img = cv2.resize(img, (256, 256))
-#             height, width, _ = img.shape
-#             img = np.array(img) / 255.0
-#             points = loaded_model.predict(img.reshape(-1, 256, 256, 3))
-#             img = img * 255
-#             img = img.astype(np.uint8)
-#             for point in points:
-#                 x, y = point
-#                 cv2.circle(img, (int(x), int(y)), 5, (10, 33, 255), -1)
-#             cv2.circle(img, (130, 160), 3, (100, 200, 100), -1)
-#             axes[i].imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-#             axes[i].set_title(f"red-Pred\nGreen-Actual")
-#             axes[i].axis('off')
-#         plt.savefig('Result_test_data.png')
-#         plt.show()
-#         logging.info("Test results displayed successfully.")
-#     except Exception as e:
-#         logging.error(f"Error during showing test results: {str(e)}")
+# Function to show test results with annotated points
+def show_test_result(loaded_model, folder_path, num_images=5, target_size=(256, 256)):
+    """Shows test results with annotated points on images."""
+    try:
+        # Get a list of all image files in the folder
+        all_images = [f for f in os.listdir(folder_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
+        # Randomly select num_images from the list
+        selected_images = random.sample(all_images, min(num_images, len(all_images)))
+        # Display and process each selected image
+        fig, axes = plt.subplots(1, len(selected_images), figsize=(20, 5))
+        for i, img_name in enumerate(selected_images):
+            img_path = os.path.join(folder_path, img_name)
+            img = cv2.imread(img_path,)
+            img = cv2.resize(img, (256, 256))
+            height, width, _ = img.shape
+            img = np.array(img) / 255.0
+            points = loaded_model.predict(img.reshape(-1, 256, 256, 3))
+            img = img * 255
+            img = img.astype(np.uint8)
+            for point in points:
+                x, y = point
+                cv2.circle(img, (int(x), int(y)), 5, (10, 33, 255), -1)
+            cv2.circle(img, (130, 160), 3, (100, 200, 100), -1)
+            axes[i].imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+            axes[i].set_title(f"red-Pred\nGreen-Actual")
+            axes[i].axis('off')
+        plt.savefig('Result_test_data.png')
+        plt.show()
+        logging.info("Test results displayed successfully.")
+    except Exception as e:
+        logging.error(f"Error during showing test results: {str(e)}")
 
-# # Function to save DataFrame to CSV
-# def save_df_to_csv(img_array, pred_coor_array, actual_coor_array, filename):
-#     """Saves a DataFrame with columns for image paths, predicted coordinates, and actual coordinates to a CSV file."""
-#     try:
-#         data = {
-#             'img': img_array,
-#             'pred_coor': pred_coor_array,
-#             'actual_coor': actual_coor_array
-#         }
-#         df = pd.DataFrame(data)
-#         df.to_csv(filename, index=False)
-#         logging.info(f"CSV file '{filename}' saved successfully.")
-#     except Exception as e:
-#         logging.error(f"Error during saving DataFrame to CSV: {str(e)}")
+# Function to save DataFrame to CSV
+def save_df_to_csv(img_array, pred_coor_array, actual_coor_array, filename):
+    """Saves a DataFrame with columns for image paths, predicted coordinates, and actual coordinates to a CSV file."""
+    try:
+        data = {
+            'img': img_array,
+            'pred_coor': pred_coor_array,
+            'actual_coor': actual_coor_array
+        }
+        df = pd.DataFrame(data)
+        df.to_csv(filename, index=False)
+        logging.info(f"CSV file '{filename}' saved successfully.")
+    except Exception as e:
+        logging.error(f"Error during saving DataFrame to CSV: {str(e)}")
 
 # # Evaluate the loaded model
 # try:
