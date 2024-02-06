@@ -71,3 +71,17 @@
 2024-02-05 23:16:42,241 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
 2024-02-05 23:16:42,295 - INFO - Model built successfully.
 2024-02-05 23:16:42,680 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
+2024-02-06 19:44:30,725 - INFO - Data unzipped successfully.
+2024-02-06 19:44:38,877 - ERROR - Error during image annotation: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\color.cpp:196: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+2024-02-06 19:44:42,273 - INFO - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0, y 0
+2024-02-06 19:44:44,929 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\backend.py:873: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2024-02-06 19:44:45,491 - WARNING - From c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\.conda\Lib\site-packages\keras\src\layers\normalization\batch_normalization.py:979: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+2024-02-06 19:45:02,100 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+2024-02-06 19:45:02,308 - INFO - Model built successfully.
+2024-02-06 19:45:03,000 - ERROR - Error during model building: module 'pydot' has no attribute 'InvocationException'
