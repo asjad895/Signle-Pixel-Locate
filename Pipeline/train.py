@@ -116,11 +116,12 @@ def train():
         logger.info(f"Model saved successfully to path: {p}\n")
     except Exception as e:
         logger.error(f"Error during model saving: {str(e)}\n")
+    return history
     
 # Save the training log to WandB
 # wandb.save('log/my_app.log')
 
-def history_save():
+def history_save(history):
     fig, axes = plt.subplots(1, 2, figsize=(12, 6))
     # Loss comparison plot
     axes[0].plot(history.history['loss'], label='Training Loss')

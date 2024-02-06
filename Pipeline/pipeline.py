@@ -40,8 +40,8 @@ try:
     logger.info('Loading and preprocessing data completed successfully(Data Pipeline).')
     logger.info('***********Running Model pipeline*************\n')
     try:
-        train()
-        history_save()
+        history=train()
+        history_save(history=history)
         logger.info(f"Training completed successfully(Model Pipeline). with this hyperparametres: {hyper_p}")
     except Exception as e:
         logger.error("Error in calling training",str(e))
