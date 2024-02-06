@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import cv2
 import random
 import shutil
-from help import *
+from Help import *
 # Set up logging
 log_file_path = os.path.join("log", "data_loading_log.txt")
 logging.basicConfig(filename=log_file_path, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

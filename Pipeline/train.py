@@ -2,11 +2,12 @@ import os
 import logging
 import wandb
 from tensorflow.keras import models, layers, callbacks
+from tensorflow.keras.utils import plot_model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 # from single_pixel_locate_train import *
-from Pipeline.Data_loading import *
-from Pipeline.Data_preprocessing import *
+from Data_loading import *
+from Data_preprocessing import *
 import logging.config
 import sys
 
@@ -21,7 +22,7 @@ log_file_path = "log/training_log.txt"
 # logger.basicConfig(filename=log_file_path, level=logger.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Initialize WandB for experiment tracking
-wandb.init(project="pixel_localization_experiment", sync_tensorboard=True)
+# wandb.init(project="pixel_localization_experiment", sync_tensorboard=True)
 
 # Data augmentation if needed (currently not used)
 datagen = ImageDataGenerator(
@@ -69,6 +70,8 @@ def create_pixel_localization_model(input_shape=(256, 256, 3)):
     return model
 try:
     model = create_pixel_localization_model()
+    model.summary()
+    plot_model(model, to_file='model_architecture.png', show_shapes=True)
     logger.info('Creating model... successfully')
     # learning rate scheduler for dynamic optimization when performance will not improve after 3 epochs
     lr_scheduler = callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, min_lr=1e-6)
@@ -84,34 +87,69 @@ try:
     val_images, val_coor = annotate('Data/Face_data/val')
     logger.info(f"Data Statistic\n train X {len(train_images)}, y {len(train_coor)}\n test X {len(test_images)}, y {len(test_coor)}\n val X {len(val_images)},y {len(val_coor)}")
     ColoredOutput.log_message(f"Data Statistic\n train X {len(train_images)}, y {len(train_coor)}\n test X {len(test_images)}, y {len(test_coor)}\n val X {len(val_images)},y {len(val_coor)}","CYAN",True)
-    ColoredOutput.log_message("Data preprocess completed","GREEN",True)
+    ColoredOutput.log_message("Data splitting completed","GREEN",True)
 except Exception as e:
     logger.error(f"Error during image collection and annotation: {str(e)}")
     ColoredOutput.log_message(f"Error during image collection and annotation: {str(e)}","RED",True)
 
 
-# Training
-try:
-    # Training the model with early stopping and learning rate scheduler
-    history = model.fit(x=train_images, y=train_coor, batch_size=32, steps_per_epoch=len(train_images) // 32,
+def history_save(history):
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+    # Loss comparison plot
+    axes[0].plot(history.history['loss'], label='Training Loss')
+    axes[0].plot(history.history['val_loss'], label='Validation Loss')
+    axes[0].set_xlabel('Epoch')
+    axes[0].set_ylabel('Loss')
+    axes[0].set_title('Loss Curve - Training vs. Validation')
+    axes[0].grid(True)
+    axes[0].legend()
+
+# Epoch vs LR plot
+    axes[1].plot(history.history['lr'], label='Learning Rate')
+    axes[1].set_xlabel('Epoch')
+    axes[1].set_ylabel('Learning Rate')
+    axes[1].set_title('Learning Rate over Epochs')
+    axes[1].grid(True)
+    axes[1].legend()
+    plt.tight_layout()
+    plt.savefig('training_analysis.png')
+    plt.show()
+    
+def train():
+    # Training
+    try:
+        # Training the model with early stopping and learning rate scheduler
+        history = model.fit(x=train_images, y=train_coor, batch_size=32, steps_per_epoch=len(train_images) // 32,
                         epochs=10, validation_split=0.2, callbacks=[lr_scheduler, early_stopping])
 
-    # Log training information
-    logger.info("Training completed successfully.")
-    wandb.log({"Training Completed": True})
+        # Log training information
+        logger.info("Training completed successfully.")
+    # wandb.log({"Training Completed": True})
 
-except Exception as e:
-    # Log error information
-    logger.error(f"Error during training: {str(e)}")
-    wandb.log({"Training Error": str(e)})
+    except Exception as e:
+        # Log error information
+        logger.error(f"Error during training: {str(e)}")
+    # wandb.log({"Training Error": str(e)})
 
 # Save the trained model
-try:
-    p="Trained_model/pixel_localization_model_1.h5"
-    model.save(p)
-    logger.info(f"Model saved successfully to path: {p}\n")
-except Exception as e:
-    logger.error(f"Error during model saving: {str(e)}\n")
-
+    try:
+        p=os.path.join("Trained_model","ixel_localization_model_1.h5")
+        model.save(p)
+        logger.info(f"Model saved successfully to path: {p}\n")
+    except Exception as e:
+        logger.error(f"Error during model saving: {str(e)}\n")
+    return history
 # Save the training log to WandB
-wandb.save('log/my_app.lo')
+# wandb.save('log/my_app.log')
+
+hyper_p={
+    "batch_size": 32,
+    "epochs": 10,
+    "optimmizer":"Adam",
+    "loss":"mean_squared_loss",
+    "validation_split": 0.2,
+    "lr_scheduler_factor": 0.1,
+    "lr_scheduler_patience": 3,
+    "lr_scheduler_min_lr": 1e-6,
+    "early_stopping_patience": 5
+}

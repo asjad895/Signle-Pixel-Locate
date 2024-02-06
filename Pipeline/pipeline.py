@@ -1,5 +1,8 @@
 from Data_loading import *
 from Data_preprocessing import *
+from test import test_model
+from train import *
+from test import *
 import logging
 import logging.config
 import sys
@@ -29,10 +32,24 @@ def setup_custom_logger(module_name):
 # train
 # Test
 #Tune model
+
+# pipeline
 try:
     data_loading()
     data_preprocess()
     logger.info('Loading and preprocessing data completed successfully(Data Pipeline).')
     logger.info('***********Running Model pipeline*************\n')
+    try:
+        history=train()
+        history_save()
+        logger.info("Training completed successfully(Model Pipeline). with this hyperparametres: " + hyper_p) if history else logger.info("Training completed successfully(Model Pipeline).")
+    except Exception as e:
+        logger.error("Error in calling training",str(e))
+    if history or len(os.listdir("Trained_model"))>0:
+        try:
+            test_model()
+            logger.info("Testing completed successfully")
+        except Exception as e:
+            logger.error("Error in calling test_model",str(e))
 except Exception as e:
     logger.error(f"Error running Data pipeline{e}",exc_info=True)

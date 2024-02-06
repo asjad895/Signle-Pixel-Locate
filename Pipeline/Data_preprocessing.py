@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import cv2
 import random
 import shutil
-from help import *
+from Help import *
 from Data_loading import *
 
 # Set up logging
