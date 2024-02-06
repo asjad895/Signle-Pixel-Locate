@@ -42,7 +42,7 @@ To train the model, run the following command:
 - **Notes** -
 - i trained on kaggle due to RAM and GPU .so i have not tested on it my local env
 - for running on local machine adapt code like file path and import helping function etc
-- ```python single_pixel_locate_train.py```
+- ```python single_pixel_locate_train.py``` or ```python pipeline.py``` in Pipeline dir
 - ```python train.py```
 u can run notebook for experiment how model is trained
 

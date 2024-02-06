@@ -12,7 +12,7 @@ from help import *
 from Data_loading import *
 
 # Set up logging
-log_file_path = os.path.join(os.path.abspath(os.sep), "log", "data_preprocessing_log.txt")
+log_file_path = os.path.join("log", "data_preprocessing_log.txt")
 logging.basicConfig(filename=log_file_path, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 ColoredOutput.log_message("Data preprocessing Started....",'BLUE',True)
 # Function to create train, validation, and test sets

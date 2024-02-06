@@ -10,7 +10,7 @@ import random
 import shutil
 from help import *
 # Set up logging
-log_file_path = os.path.join(os.path.abspath(os.sep), "log", "data_loading_log.txt")
+log_file_path = os.path.join("log", "data_loading_log.txt")
 logging.basicConfig(filename=log_file_path, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 ColoredOutput.log_message("Data Loading Started....",'BLUE',True)
 # Function to unzip file
