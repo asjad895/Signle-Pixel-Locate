@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 # from single_pixel_locate_train import *
 import matplotlib.pyplot as plt
+from Pipeline.Data_preprocessing import *
 import cv2
 import logging
 import logging.config
@@ -29,6 +30,7 @@ except Exception as e:
 
 # Evaluate
 try:
+    test_images, test_coor = annotate('Data/Face_data/test')
     test_loss = loaded_model.evaluate(test_images, test_coor)
     print("Test Loss on unseen data:", test_loss)
     logger.info("Evaluation completed successfully.")
