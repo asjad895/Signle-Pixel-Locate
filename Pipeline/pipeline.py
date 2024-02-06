@@ -12,7 +12,7 @@ import sys
 logging.config.fileConfig('logging_config.ini')
 # Get a logger for your module
 logger = logging.getLogger("log/pipeline")
-logger.info("Starting Data Pipeline")
+logger.info("**********************Starting Pipeline********************")
 def setup_custom_logger(module_name):
     logger = logging.getLogger(module_name)
     logger.setLevel(logging.DEBUG)
@@ -42,7 +42,7 @@ try:
     try:
         history=train()
         history_save(history=history)
-        logger.info(f"Training completed successfully(Model Pipeline). with this hyperparametres: {hyper_p}")
+        logger.info(f"Training completed successfully(Model Pipeline). with this hyperparametres\n: {hyper_p}")
     except Exception as e:
         logger.error("Error in calling training",str(e))
     if len(os.listdir("Trained_model"))>0:
