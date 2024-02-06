@@ -40,16 +40,16 @@ try:
     logger.info('Loading and preprocessing data completed successfully(Data Pipeline).')
     logger.info('***********Running Model pipeline*************\n')
     try:
-        history=train()
+        train()
         history_save()
-        logger.info("Training completed successfully(Model Pipeline). with this hyperparametres: " + hyper_p) if history else logger.info("Training completed successfully(Model Pipeline).")
+        logger.info(f"Training completed successfully(Model Pipeline). with this hyperparametres: {hyper_p}")
     except Exception as e:
         logger.error("Error in calling training",str(e))
-    if history or len(os.listdir("Trained_model"))>0:
+    if len(os.listdir("Trained_model"))>0:
         try:
             test_model()
             logger.info("Testing completed successfully")
         except Exception as e:
             logger.error("Error in calling test_model",str(e))
 except Exception as e:
-    logger.error(f"Error running Data pipeline{e}",exc_info=True)
+    logger.error(f"Error running  pipeline{e}",exc_info=True)

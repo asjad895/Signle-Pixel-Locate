@@ -40,9 +40,10 @@ Read Data dir readme.md
 To train the model, run the following command:
 
 - **Notes** -
-- i trained on kaggle due to RAM and GPU .so i have not tested on it my local env
-- for running on local machine adapt code like file path and import helping function etc
-- ```python single_pixel_locate_train.py``` or ```python pipeline.py``` in Pipeline dir
+- i trained on kaggle due to RAM and GPU .so i have not tested on it my local env with full dataset
+- for running on local machine adapt code like file path and import helping function dataset 
+- go to pipeline dir
+- ```python pipeline.py``` in Pipeline dir
 - ```python train.py```
 u can run notebook for experiment how model is trained
 
@@ -50,7 +51,7 @@ u can run notebook for experiment how model is trained
 
 To test the model, run the following command:
 
-```python test.py```
+```python test.py``` in pipeline dir
 
 ## Results
 

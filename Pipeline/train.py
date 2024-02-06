@@ -71,13 +71,9 @@ def create_pixel_localization_model(input_shape=(256, 256, 3)):
 try:
     model = create_pixel_localization_model()
     model.summary()
-    plot_model(model, to_file='model_architecture.png', show_shapes=True)
+    # plot_model(model, to_file='model_architecture.png', show_shapes=True)
     logger.info('Creating model... successfully')
     # learning rate scheduler for dynamic optimization when performance will not improve after 3 epochs
-    lr_scheduler = callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, min_lr=1e-6)
-    # early stopping
-    early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
-
 except Exception as e:
     logger.error('Error creating model:', e)
 
@@ -92,8 +88,39 @@ except Exception as e:
     logger.error(f"Error during image collection and annotation: {str(e)}")
     ColoredOutput.log_message(f"Error during image collection and annotation: {str(e)}","RED",True)
 
+global history
+def train():
+    # Training
+    try:
+        lr_scheduler = callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, min_lr=1e-6)
+    # early stopping
+        early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
-def history_save(history):
+        # Training the model with early stopping and learning rate scheduler
+        history = model.fit(x=train_images, y=train_coor, batch_size=32, steps_per_epoch=len(train_images) // 32,
+                        epochs=1, validation_split=0.2, callbacks=[lr_scheduler, early_stopping])
+
+        # Log training information
+        logger.info("Training completed successfully.")
+    # wandb.log({"Training Completed": True})
+
+    except Exception as e:
+        # Log error information
+        logger.error(f"Error during training: {str(e)}")
+    # wandb.log({"Training Error": str(e)})
+
+# Save the trained model
+    try:
+        p=os.path.join("Trained_model","pixel_localization_model_1.h5")
+        model.save(p)
+        logger.info(f"Model saved successfully to path: {p}\n")
+    except Exception as e:
+        logger.error(f"Error during model saving: {str(e)}\n")
+    
+# Save the training log to WandB
+# wandb.save('log/my_app.log')
+
+def history_save():
     fig, axes = plt.subplots(1, 2, figsize=(12, 6))
     # Loss comparison plot
     axes[0].plot(history.history['loss'], label='Training Loss')
@@ -115,33 +142,6 @@ def history_save(history):
     plt.savefig('training_analysis.png')
     plt.show()
     
-def train():
-    # Training
-    try:
-        # Training the model with early stopping and learning rate scheduler
-        history = model.fit(x=train_images, y=train_coor, batch_size=32, steps_per_epoch=len(train_images) // 32,
-                        epochs=10, validation_split=0.2, callbacks=[lr_scheduler, early_stopping])
-
-        # Log training information
-        logger.info("Training completed successfully.")
-    # wandb.log({"Training Completed": True})
-
-    except Exception as e:
-        # Log error information
-        logger.error(f"Error during training: {str(e)}")
-    # wandb.log({"Training Error": str(e)})
-
-# Save the trained model
-    try:
-        p=os.path.join("Trained_model","ixel_localization_model_1.h5")
-        model.save(p)
-        logger.info(f"Model saved successfully to path: {p}\n")
-    except Exception as e:
-        logger.error(f"Error during model saving: {str(e)}\n")
-    return history
-# Save the training log to WandB
-# wandb.save('log/my_app.log')
-
 hyper_p={
     "batch_size": 32,
     "epochs": 10,
@@ -153,3 +153,5 @@ hyper_p={
     "lr_scheduler_min_lr": 1e-6,
     "early_stopping_patience": 5
 }
+
+# train()

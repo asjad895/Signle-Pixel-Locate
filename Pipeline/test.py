@@ -70,7 +70,7 @@ def save_df_to_csv(img_array, pred_coor_array, actual_coor_array, filename):
 def test_model():
     # Load the model
     try:
-        model_path = os.path.join("Trained_model","Face_single_pixel_1.h5")
+        model_path = "Trained_model/pixel_localization_model_1.h5"
         loaded_model = tf.keras.models.load_model(model_path)
         logger.info("Model loaded successfully.")
     except Exception as e:
@@ -89,7 +89,7 @@ def test_model():
     try:
         y_pred = loaded_model.predict(test_images)
         # Randomly show results for 5 images
-        show_test_result('Data/face_data/test', n_samples=5)
+        show_test_result('Data/face_data/test')
         logger.info("Random test results displayed.")
     except Exception as e:
         logger.error("Error during result display: {}".format(str(e)))
@@ -101,10 +101,11 @@ def test_model():
 
         image_paths = [os.path.join('Data/Face_data/test', image_file) for image_file in os.listdir('Data/Face_data/test')]
 
-        save_df_to_csv(image_paths, y_test_list, y_pred_list, 'Test_Data_Result/test_result.csv')
+        save_df_to_csv(image_paths, y_test_list, y_pred_list, 'Test_Data_Result/test_result_1.csv')
         logger.info("Results saved to CSV.")
     except Exception as e:
         logger.error("Error during saving results to CSV: {}".format(str(e)))
 
     # Save the evaluation log
     # logger.shutdown()
+# test_model()
