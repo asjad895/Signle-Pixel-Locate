@@ -1,10 +1,10 @@
-tensorflow
-opencv-python
-numpy
-pandas
-matplotlib
-scikit-learn
-wandb
-pydot
-graphviz
+tensorflow==2.15.0
+opencv-python==4.9.0.80
+numpy==1.26.3
+pandas==2.2.0
+matplotlib==3.8.2
+scikit-learn==1.4.0
+wandb==0.16.2
+pydot== 2.0.0
+graphviz==0.20.1
 python-dotenv
