@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 # model
-Trained_model/
+Trained_model/*.h5
 senv/
 .conda/
 # C extensions
