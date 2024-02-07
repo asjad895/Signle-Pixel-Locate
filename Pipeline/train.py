@@ -1,13 +1,16 @@
 if __name__ == "__main__" and __package__ is None:
     __package__ = "Pipeline"
 
+import datetime
 import os
 import logging
 import wandb
-from tensorflow.keras import models, layers, callbacks
-from tensorflow.keras.utils import plot_model
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from dotenv import load_dotenv
+import tensorflow as tf
+from keras import models, layers, callbacks
+from keras.utils import plot_model
+from keras.optimizers import Adam
+from keras.preprocessing.image import ImageDataGenerator
 # from single_pixel_locate_train import *
 from Pipeline.Data_loading import *
 from Pipeline.Data_preprocessing import *
@@ -15,6 +18,8 @@ import logging.config
 import sys
 
 #  tracking for debug
+dotenv_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+load_dotenv(dotenv_path)
 # Load the logging configuration from the file
 logging.config.fileConfig('logging_config.ini')
 # Get a logger for your module
@@ -25,7 +30,15 @@ log_file_path = "log/training_log.txt"
 # logger.basicConfig(filename=log_file_path, level=logger.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Initialize WandB for experiment tracking
-# wandb.init(project="pixel_localization_experiment", sync_tensorboard=True)
+# project=f"Experiment_Date_%s" %(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
+project="CV_Track"
+wandb_api_key=os.getenv('WANDB_API_KEY')
+print(wandb_api_key)
+os.environ["WANDB_API_KEY"]=wandb_api_key
+try:
+    wandb.init(project=project, sync_tensorboard=True)
+except RuntimeError as e:
+    logger.error("Failed to initialize WandB: %s" %(e))
 
 # Data augmentation if needed (currently not used)
 datagen = ImageDataGenerator(
@@ -115,10 +128,11 @@ def train():
 # Save the trained model
     try:
         p=os.path.join("Trained_model","pixel_localization_model_1.h5")
-        model.save(p)
+        model.save(p,save_format='h5')
         logger.info(f"Model saved successfully to path: {p}\n")
     except Exception as e:
         logger.error(f"Error during model saving: {str(e)}\n")
+
     return history
     
 # Save the training log to WandB
@@ -145,6 +159,11 @@ def history_save(history):
     plt.tight_layout()
     plt.savefig('training_analysis.png')
     plt.show()
+    for i in range(len(history.history['lr'])):
+        wandb.log({"Learning Rate": history.history['lr'][i]})
+        wandb.log({"Epoch":i})
+        wandb.log({"val_loss":history.history['val_loss'][i]})
+        wandb.log({"train_loss":history.history['loss'][i]})
     
 hyper_p={
     "batch_size": 32,
@@ -157,5 +176,7 @@ hyper_p={
     "lr_scheduler_min_lr": 1e-6,
     "early_stopping_patience": 5
 }
+wandb.config.update(hyper_p)
+# Create an artifact
 
 # train()

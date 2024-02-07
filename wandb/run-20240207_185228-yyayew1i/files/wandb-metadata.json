@@ -1,0 +1,44 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.7",
+    "heartbeatAt": "2024-02-07T13:22:39.980524",
+    "startedAt": "2024-02-07T13:22:28.748992",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "-m Pipeline.pipeline",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/asjad895/Signle-Pixel-Locate.git",
+        "commit": "cbf35b86b6be815569273239bdffc2c3454cf5d1"
+    },
+    "email": "mdasjad895@gmail.com",
+    "root": "C:/Users/ASUS/OneDrive/Documents/Projects/Single_pixel_local/Signle-Pixel-Locate",
+    "host": "asjadfurious",
+    "username": "ASUS",
+    "executable": "c:\\Users\\ASUS\\OneDrive\\Documents\\Projects\\Single_pixel_local\\Signle-Pixel-Locate\\.conda\\python.exe",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2600.0,
+        "min": 0.0,
+        "max": 2600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2600.0,
+            "min": 0.0,
+            "max": 2600.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 207.68585586547852,
+            "used": 200.35614776611328
+        }
+    },
+    "memory": {
+        "total": 5.951000213623047
+    }
+}

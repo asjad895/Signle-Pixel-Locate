@@ -178,6 +178,7 @@ def data_preprocess():
         logging.info(f"Data Statistic\n train X {len(train_images)}, y {len(train_coor)}\n test X {len(test_images)}, y {len(test_coor)}\n val X {len(val_images)},y {len(val_coor)}")
         ColoredOutput.log_message(f"Data Statistic\n train X {len(train_images)}, y {len(train_coor)}\n test X {len(test_images)}, y {len(test_coor)}\n val X {len(val_images)},y {len(val_coor)}","CYAN",True)
         ColoredOutput.log_message("Data preprocess completed","GREEN",True)
+        ColoredOutput.log_message(f"Data sample\n image shape: {train_images.shape} and annotated: {train_coor[0]}","YELLOW",True)
     except Exception as e:
         logging.error(f"Error during image collection and annotation: {str(e)}")
         ColoredOutput.log_message(f"Error during image collection and annotation: {str(e)}","RED",True)

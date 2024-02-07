@@ -1,0 +1,1 @@
+{"Learning Rate": 0.0010000000474974513, "_timestamp": 1707312510.869112, "_runtime": 361.8952510356903, "_step": 3, "Epoch": 0, "val_loss": 20911.33203125, "train_loss": 21243.958984375, "_wandb": {"runtime": 359}}

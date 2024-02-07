@@ -56,3 +56,12 @@ try:
             logger.error("Error in calling test_model",str(e))
 except Exception as e:
     logger.error(f"Error running  pipeline{e}",exc_info=True)
+
+artifact = wandb.Artifact('model', type='model')
+
+# Add files to the artifact
+artifact.add_file('Trained_model/pixel_localization_model_1.h5')
+# Save the artifact
+wandb.log_artifact(artifact)
+
+wandb.finish()

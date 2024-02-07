@@ -1,0 +1,57 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.7
+    cli_version: 0.16.2
+    framework: keras
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1707307806.570039
+    t:
+      1:
+      - 2
+      - 3
+      - 55
+      2:
+      - 2
+      - 3
+      - 55
+      3:
+      - 2
+      - 23
+      - 35
+      4: 3.11.7
+      5: 0.16.2
+      8:
+      - 3
+      - 5
+      13: windows-amd64
+batch_size:
+  desc: null
+  value: 32
+epochs:
+  desc: null
+  value: 10
+optimmizer:
+  desc: null
+  value: Adam
+loss:
+  desc: null
+  value: mean_squared_loss
+validation_split:
+  desc: null
+  value: 0.2
+lr_scheduler_factor:
+  desc: null
+  value: 0.1
+lr_scheduler_patience:
+  desc: null
+  value: 3
+lr_scheduler_min_lr:
+  desc: null
+  value: 1.0e-06
+early_stopping_patience:
+  desc: null
+  value: 5
