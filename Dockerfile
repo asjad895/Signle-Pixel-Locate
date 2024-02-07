@@ -5,7 +5,8 @@ FROM tensorflow/tensorflow:2.15.0
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY . /app 
+      
 
 # Copy data files into the container
 COPY Data/ /app/Data
