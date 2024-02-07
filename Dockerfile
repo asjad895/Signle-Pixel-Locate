@@ -1,5 +1,5 @@
 # Use an official TensorFlow runtime as a parent image
-FROM tensorflow/tensorflow
+FROM tensorflow/tensorflow:2.15.0
 
 # Set the working directory
 WORKDIR /app
