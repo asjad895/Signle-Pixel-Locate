@@ -1,10 +1,13 @@
+if __name__ == "__main__" and __package__ is None:
+    __package__ = "Pipeline"
+
 import os
 import tensorflow as tf
 import numpy as np
 import pandas as pd
 # from single_pixel_locate_train import *
 import matplotlib.pyplot as plt
-from Data_preprocessing import *
+from Pipeline.Data_preprocessing import *
 import cv2
 import logging
 import logging.config

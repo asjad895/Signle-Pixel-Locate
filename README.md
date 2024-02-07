@@ -43,15 +43,19 @@ To train the model, run the following command:
 - i trained on kaggle due to RAM and GPU .so i have not tested on it my local env with full dataset
 - for running on local machine adapt code like file path and import helping function dataset 
 - go to pipeline dir
-- ```python pipeline.py``` in Pipeline dir
-- ```python train.py```
+- ```python -m Pipeline.pipeline.py``` 
+- ```python -m Pipeline.train.py``` or ```python Pipeline.test.py``` for individual running(before that must run ```python -m Pipeline.Data_loading.py``` and ```python -m Pipeline.Data_preprocessing.py```)
 u can run notebook for experiment how model is trained
 
 ## Testing
 
 To test the model, run the following command:
 
-```python test.py``` in pipeline dir
+```python Pipeline.test.py``` 
+
+## pipeline
+
+```python main.py```
 
 ## Results
 
@@ -82,5 +86,8 @@ This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md
 
 ## Run  Scripts
 
-```docker run ml train.py```
-```docker run ml test.py```
+```docker run ml -m Pipeline.pipeline.py``` complete steps
+```docker run ml -m Pipeline.train.py```
+```docker run ml -m Pipeline.test.py```
+
+```docker run ml main.py``` run app(in future)

@@ -1,3 +1,6 @@
+if __name__ == "__main__" and __package__ is None:
+    __package__ = "Pipeline"
+
 import os
 import logging
 import zipfile
@@ -8,8 +11,8 @@ import matplotlib.pyplot as plt
 import cv2
 import random
 import shutil
-from Help import *
-from Data_loading import *
+from utils.Help import *
+from Pipeline.Data_loading import *
 
 # Set up logging
 log_file_path = os.path.join("log", "data_preprocessing_log.txt")

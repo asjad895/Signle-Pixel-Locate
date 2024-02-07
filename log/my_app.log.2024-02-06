@@ -1,0 +1,433 @@
+2024-02-06 18:37:25 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 18:37:27 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 18:37:27 - INFO - pipeline.py:15 - Loading and preprocessing data completed successfully.
+2024-02-06 18:44:53 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 18:44:55 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 18:44:55 - INFO - pipeline.py:34 - Loading and preprocessing data completed successfully.
+2024-02-06 18:48:03 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 18:48:06 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 18:48:06 - INFO - pipeline.py:32 - Loading and preprocessing data completed successfully.
+2024-02-06 19:00:25 - INFO - pipeline.py:12 - Starting Data Pipeline
+2024-02-06 19:00:26 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 19:00:28 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 19:00:28 - INFO - pipeline.py:35 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 19:00:28 - INFO - pipeline.py:36 - ***********Running Model pipeline*************
+2024-02-06 19:03:33 - INFO - pipeline.py:12 - Starting Data Pipeline
+2024-02-06 19:03:34 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 19:03:36 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 19:03:36 - INFO - pipeline.py:35 - Loading and preprocessing data completed successfully(Data Pipeline).
+
+2024-02-06 19:03:36 - INFO - pipeline.py:36 - ***********Running Model pipeline*************
+2024-02-06 19:04:25 - INFO - pipeline.py:12 - Starting Data Pipeline
+2024-02-06 19:04:26 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 19:04:28 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 19:04:28 - INFO - pipeline.py:35 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 19:04:28 - INFO - pipeline.py:36 - ***********Running Model pipeline*************
+
+2024-02-06 19:05:01 - INFO - pipeline.py:12 - Starting Data Pipeline
+2024-02-06 19:05:01 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 19:05:03 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 19:05:03 - INFO - pipeline.py:35 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 19:05:03 - INFO - pipeline.py:36 - ***********Running Model pipeline*************
+
+2024-02-06 19:45:03 - INFO - test.py:17 - ...........Running Testing............
+2024-02-06 19:45:05 - ERROR - test.py:36 - Error during evaluation: name 'loaded_model' is not defined
+2024-02-06 19:45:05 - ERROR - test.py:45 - Error during result display: name 'loaded_model' is not defined
+2024-02-06 19:45:06 - ERROR - test.py:57 - Error during saving results to CSV: name 'y_pred' is not defined
+2024-02-06 21:11:26 - INFO - train.py:18 - ...........starting training....................
+2024-02-06 21:17:54 - INFO - train.py:18 - ...........starting training....................
+2024-02-06 21:18:02 - INFO - train.py:72 - Creating model... successfully
+2024-02-06 21:18:02 - INFO - train.py:85 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 21:44:32 - INFO - train.py:100 - Training completed successfully.
+2024-02-06 21:44:39 - ERROR - train.py:114 - Error during model saving: Can't decrement id ref count (unable to extend file properly)
+
+2024-02-06 22:04:28 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 22:04:29 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:04:29 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:04:29 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 22:04:29 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 22:04:29 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 22:04:29 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': 'bd27bda1871b42f4b78068d3bd9aabe8', 'span_id': '83db778964af57a4', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 22:04:30 - INFO - train.py:18 - ...........starting training....................
+2024-02-06 22:04:35 - INFO - train.py:72 - Creating model... successfully
+2024-02-06 22:04:36 - INFO - train.py:85 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:04:37 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 22:04:39 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 22:04:44 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:04:44 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 22:04:44 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 22:45:59 - INFO - pipeline.py:51 - Testing completed successfully
+2024-02-06 22:54:18 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 22:54:19 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:54:19 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:54:19 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 22:54:19 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 22:54:19 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 22:54:20 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': '48867f06a9d440ce9093bc63a4833fab', 'span_id': 'af2b2517a2b5a909', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 22:54:20 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 22:54:25 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:54:25 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 22:54:26 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 22:54:28 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:54:28 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 22:54:28 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 22:54:32 - ERROR - pipeline.py:55 - Error running Data pipelinename 'history' is not defined
+Traceback (most recent call last):
+  File "c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\Pipeline\pipeline.py", line 48, in <module>
+    if history or len(os.listdir("Trained_model"))>0:
+       ^^^^^^^
+NameError: name 'history' is not defined
+2024-02-06 22:55:27 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 22:55:27 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:55:27 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:55:28 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 22:55:28 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 22:55:28 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 22:55:28 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': '74b1da0e2cbb4e6790b1d53612de8c0f', 'span_id': '870886a418c618c4', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 22:55:29 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 22:55:33 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:55:33 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 22:55:33 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 22:55:36 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:55:36 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 22:55:36 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 22:55:37 - ERROR - pipeline.py:55 - Error running Data pipelinename 'history' is not defined
+Traceback (most recent call last):
+  File "c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\Pipeline\pipeline.py", line 48, in <module>
+    if history or len(os.listdir("Trained_model"))>0:
+       ^^^^^^^
+NameError: name 'history' is not defined
+2024-02-06 22:57:57 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 22:57:57 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:57:57 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 22:57:57 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 22:57:57 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 22:57:57 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 22:57:58 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': 'be389196c9364b258ffd04bf6decc4b7', 'span_id': '99af010bdfb75b3a', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 22:57:59 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 22:58:03 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:58:03 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 22:58:04 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 22:58:08 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 22:58:08 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 22:58:08 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 22:58:10 - ERROR - pipeline.py:55 - Error running  pipelinename 'history' is not defined
+Traceback (most recent call last):
+  File "c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\Pipeline\pipeline.py", line 48, in <module>
+    if history or len(os.listdir("Trained_model"))>0:
+       ^^^^^^^
+NameError: name 'history' is not defined
+2024-02-06 23:00:29 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:00:29 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:00:30 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:00:30 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 23:00:30 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 23:00:30 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 23:00:30 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': '72197a68795c40b688e8cbe5fb116169', 'span_id': 'b4a77647d24cfecd', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 23:00:31 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:00:36 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:00:36 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 23:00:36 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 23:00:38 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:00:38 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 23:00:38 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 23:00:39 - ERROR - pipeline.py:55 - Error running  pipelinename 'history' is not defined
+Traceback (most recent call last):
+  File "c:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate\Pipeline\pipeline.py", line 48, in <module>
+    if history or len(os.listdir("Trained_model"))>0:
+       ^^^^^^^
+NameError: name 'history' is not defined
+2024-02-06 23:01:35 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:01:36 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:01:36 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:01:36 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 23:01:36 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 23:01:36 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 23:01:37 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': 'bd3cdbe6dc744d71b97a88a2c8619629', 'span_id': 'a13b0093e2af4022', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 23:01:38 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:01:53 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:01:53 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 23:01:53 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 23:01:57 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:01:57 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 23:01:57 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 23:02:00 - INFO - pipeline.py:51 - Testing completed successfully
+2024-02-06 23:08:06 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:08:07 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:08:07 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:08:07 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 23:08:07 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 23:08:07 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 23:08:07 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': '942003e9289540a397f7beb6b8a6f9f5', 'span_id': '98cda254b0e399a1', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 23:08:08 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:08:12 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:08:12 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 23:08:13 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 23:08:16 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:08:16 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 23:08:16 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 23:08:20 - INFO - pipeline.py:52 - Testing completed successfully
+2024-02-06 23:10:09 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:10:13 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:10:13 - ERROR - train.py:131 - Error during training: name 'lr_scheduler' is not defined
+2024-02-06 23:10:16 - INFO - train.py:138 - Model saved successfully to path: Trained_model\pixel_localization_model_1.h5
+
+2024-02-06 23:13:59 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:14:03 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:14:03 - ERROR - train.py:109 - Error during training: name 'lr_scheduler' is not defined
+2024-02-06 23:14:06 - INFO - train.py:116 - Model saved successfully to path: Trained_model\pixel_localization_model_1.h5
+
+2024-02-06 23:15:19 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:15:32 - INFO - train.py:88 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:15:32 - ERROR - train.py:109 - Error during training: name 'lr_scheduler' is not defined
+2024-02-06 23:15:34 - INFO - train.py:116 - Model saved successfully to path: Trained_model\pixel_localization_model_1.h5
+
+2024-02-06 23:18:32 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:18:35 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:19:22 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:19:27 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:20:25 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:20:28 - INFO - train.py:75 - Creating model... successfully
+2024-02-06 23:20:28 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:21:22 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:21:25 - INFO - train.py:75 - Creating model... successfully
+2024-02-06 23:21:25 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:25:31 - INFO - train.py:104 - Training completed successfully.
+2024-02-06 23:26:16 - INFO - train.py:116 - Model saved successfully to path: Trained_model\pixel_localization_model_1.h5
+
+2024-02-06 23:27:00 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:27:01 - ERROR - test.py:77 - Error loading model: No file or directory found at Trained_model\Face_single_pixel_1.h5
+2024-02-06 23:27:01 - ERROR - test.py:86 - Error during evaluation: cannot access local variable 'loaded_model' where it is not associated with a value
+2024-02-06 23:27:01 - ERROR - test.py:95 - Error during result display: cannot access local variable 'loaded_model' where it is not associated with a value
+2024-02-06 23:27:01 - ERROR - test.py:107 - Error during saving results to CSV: cannot access local variable 'y_pred' where it is not associated with a value
+2024-02-06 23:28:42 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:28:42 - ERROR - test.py:77 - Error loading model: No file or directory found at Trained_model/Face_single_pixel_1.h5
+2024-02-06 23:28:42 - ERROR - test.py:86 - Error during evaluation: cannot access local variable 'loaded_model' where it is not associated with a value
+2024-02-06 23:28:42 - ERROR - test.py:95 - Error during result display: cannot access local variable 'loaded_model' where it is not associated with a value
+2024-02-06 23:28:42 - ERROR - test.py:107 - Error during saving results to CSV: cannot access local variable 'y_pred' where it is not associated with a value
+2024-02-06 23:30:50 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:31:04 - INFO - test.py:75 - Model loaded successfully.
+2024-02-06 23:31:16 - INFO - test.py:84 - Evaluation completed successfully.
+2024-02-06 23:31:21 - ERROR - test.py:95 - Error during result display: show_test_result() got an unexpected keyword argument 'n_samples'
+2024-02-06 23:31:21 - INFO - test.py:65 - CSV file 'Test_Data_Result/test_result.csv' saved successfully.
+2024-02-06 23:31:21 - INFO - test.py:105 - Results saved to CSV.
+2024-02-06 23:33:55 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:34:12 - INFO - test.py:75 - Model loaded successfully.
+2024-02-06 23:34:23 - INFO - test.py:84 - Evaluation completed successfully.
+2024-02-06 23:34:27 - ERROR - test.py:95 - Error during result display: show_test_result() missing 1 required positional argument: 'folder_path'
+2024-02-06 23:34:27 - INFO - test.py:65 - CSV file 'Test_Data_Result/test_result_1.csv' saved successfully.
+2024-02-06 23:34:27 - INFO - test.py:105 - Results saved to CSV.
+2024-02-06 23:34:32 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:34:32 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:34:32 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 23:34:32 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 23:34:32 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 23:34:33 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': 'f19224398e324925a75e0b76d1570364', 'span_id': 'a75fc68478abf192', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 23:34:33 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:34:35 - INFO - train.py:75 - Creating model... successfully
+2024-02-06 23:34:36 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:34:36 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 23:34:36 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 23:34:42 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:34:42 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 23:34:42 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 23:35:51 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:35:52 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:35:52 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:35:52 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 23:35:52 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 23:35:52 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 23:35:52 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': 'c5be15a150994dbd80d41b6b115bf77f', 'span_id': 'af8ad0a05124faf8', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 23:35:53 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:35:57 - INFO - train.py:75 - Creating model... successfully
+2024-02-06 23:35:57 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:35:57 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 23:35:58 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 23:36:00 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:36:00 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 23:36:00 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 23:41:08 - INFO - test.py:65 - CSV file 'Test_Data_Result/test_result_1.csv' saved successfully.
+2024-02-06 23:41:08 - INFO - pipeline.py:52 - Testing completed successfully
+2024-02-06 23:43:43 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:43:44 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:43:45 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:43:45 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 23:43:45 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 23:43:45 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 23:43:45 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': 'f9676608c50949e68f81c59e65f4761a', 'span_id': '9cd59b2725491e9c', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 23:43:46 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:43:51 - INFO - train.py:75 - Creating model... successfully
+2024-02-06 23:43:52 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:43:52 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 23:43:52 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 23:43:55 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:43:55 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 23:43:55 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 23:47:46 - INFO - test.py:65 - CSV file 'Test_Data_Result/test_result_1.csv' saved successfully.
+2024-02-06 23:47:46 - INFO - pipeline.py:51 - Testing completed successfully
+2024-02-06 23:50:12 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:54:50 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:55:20 - INFO - test.py:18 - ...........Running Testing............
+2024-02-06 23:55:21 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:55:21 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-06 23:55:21 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-06 23:55:21 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-06 23:55:21 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-06 23:55:22 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': 'e5ab65945f8641fd992ab709181ce771', 'span_id': 'bed6cef4b9ee1483', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-06 23:55:22 - INFO - train.py:19 - ...........starting training....................
+2024-02-06 23:55:26 - INFO - train.py:75 - Creating model... successfully
+2024-02-06 23:55:26 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:55:26 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-06 23:55:27 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-06 23:55:33 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-06 23:55:33 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-06 23:55:33 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-06 23:59:49 - INFO - test.py:65 - CSV file 'Test_Data_Result/test_result_1.csv' saved successfully.
+2024-02-06 23:59:49 - INFO - pipeline.py:51 - Testing completed successfully
+2024-02-07 00:00:33 - INFO - test.py:18 - ...........Running Testing............
+2024-02-07 00:00:34 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-07 00:00:34 - DEBUG - cmd.py:1057 - Popen(['git', 'version'], cwd=C:\Users\ASUS\OneDrive\Documents\Projects\Single_pixel_local\Signle-Pixel-Locate, stdin=None, shell=False, universal_newlines=False)
+2024-02-07 00:00:34 - DEBUG - auth.py:50 - Trying paths: ['C:\\Users\\ASUS\\.docker\\config.json', 'C:\\Users\\ASUS\\.dockercfg']
+2024-02-07 00:00:34 - DEBUG - auth.py:54 - Found file at path: C:\Users\ASUS\.docker\config.json
+2024-02-07 00:00:34 - DEBUG - auth.py:242 - Found 'credsStore' section
+2024-02-07 00:00:36 - DEBUG - scope.py:237 - [Tracing] Create new propagation context: {'trace_id': '9796d711ec3c41d6b30a8182f65a117c', 'span_id': 'bd9eb3fe80b66591', 'parent_span_id': None, 'dynamic_sampling_context': None}
+2024-02-07 00:00:38 - INFO - train.py:19 - ...........starting training....................
+2024-02-07 00:00:46 - INFO - train.py:75 - Creating model... successfully
+2024-02-07 00:00:46 - INFO - train.py:84 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-07 00:00:46 - INFO - pipeline.py:15 - Starting Data Pipeline
+2024-02-07 00:00:48 - INFO - Data_loading.py:78 - Data unzipped successfully.
+2024-02-07 00:00:52 - INFO - Data_preprocessing.py:175 - Data Statistic
+ train X 70, y 70
+ test X 20, y 20
+ val X 0,y 0
+2024-02-07 00:00:52 - INFO - pipeline.py:40 - Loading and preprocessing data completed successfully(Data Pipeline).
+2024-02-07 00:00:52 - INFO - pipeline.py:41 - ***********Running Model pipeline*************
+
+2024-02-07 00:07:05 - INFO - pipeline.py:45 - Training completed successfully(Model Pipeline). with this hyperparametres: {'batch_size': 32, 'epochs': 10, 'optimmizer': 'Adam', 'loss': 'mean_squared_loss', 'validation_split': 0.2, 'lr_scheduler_factor': 0.1, 'lr_scheduler_patience': 3, 'lr_scheduler_min_lr': 1e-06, 'early_stopping_patience': 5}
+2024-02-07 00:08:14 - INFO - test.py:65 - CSV file 'Test_Data_Result/test_result_1.csv' saved successfully.
+2024-02-07 00:08:14 - INFO - pipeline.py:51 - Testing completed successfully

@@ -1,8 +1,11 @@
-from Data_loading import *
-from Data_preprocessing import *
-from test import test_model
-from train import *
-from test import *
+if __name__ == "__main__" and __package__ is None:
+    __package__ = "Pipeline"
+
+from Pipeline.Data_loading import *
+from Pipeline.Data_preprocessing import *
+from Pipeline.test import test_model
+from Pipeline.train import *
+from Pipeline.test import *
 import logging
 import logging.config
 import sys

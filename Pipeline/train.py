@@ -1,3 +1,6 @@
+if __name__ == "__main__" and __package__ is None:
+    __package__ = "Pipeline"
+
 import os
 import logging
 import wandb
@@ -6,8 +9,8 @@ from tensorflow.keras.utils import plot_model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 # from single_pixel_locate_train import *
-from Data_loading import *
-from Data_preprocessing import *
+from Pipeline.Data_loading import *
+from Pipeline.Data_preprocessing import *
 import logging.config
 import sys
 
