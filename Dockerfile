@@ -1,5 +1,5 @@
 # Use an official TensorFlow runtime as a parent image
-FROM tensorflow/tensorflow:2.15.0
+FROM python:3.11
 
 # Set the working directory
 WORKDIR /app
@@ -9,10 +9,9 @@ COPY . /app
       
 
 # Copy data files into the container
-COPY Data/ /app/Data
+# COPY Data/ /app/Data
 
 # Install any dependencies needed for your script
-# For example, if you have a requirements.txt file:
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Define the command to run your scripts
